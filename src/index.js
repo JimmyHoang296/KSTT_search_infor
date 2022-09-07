@@ -77,7 +77,6 @@ let cautionSearchEle = document.querySelector(".search-form .caution");
 
 const renderSearchData = (data) => {
   const searchResultEle = document.querySelector(".search-result");
-  console.log(data);
   data.result.forEach((item) => {
     searchResultEle.innerHTML =
       searchResultEle.innerHTML +
@@ -85,11 +84,11 @@ const renderSearchData = (data) => {
     <div class="search-result-item">
         <div class="infor-group">
           <div class="infor">
-            <span class="infor-title">site</span>
+            <span class="infor-title">Site</span>
             <p class="infor-detail">${item.site}</p>
           </div>
           <div class="infor">
-            <span class="infor-title">tên CH</span>
+            <span class="infor-title">Tên CH</span>
             <p class="infor-detail">${item.siteName}</p>
           </div>
           <div class="infor">
@@ -111,11 +110,11 @@ const renderSearchData = (data) => {
           </div>
           <div class="infor-group">
             <div class="infor">
-              <span class="infor-title">GDV</span>
+              <span class="infor-title">QLKV</span>
               <p class="infor-detail">${item.QLKV}</p>
             </div>
             <div class="infor">
-              <span class="infor-title">GDM</span>
+              <span class="infor-title">GDV</span>
               <p class="infor-detail">${item.GDV}</p>
             </div>
           </div>
