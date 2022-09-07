@@ -10,12 +10,84 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <!-- font awesome -->
+    <script
+      src="https://kit.fontawesome.com/yourcode.js"
+      crossorigin="anonymous"
+    ></script>
   </head>
   <body>
-    <div class="infor">
-      <span class="infor-title">ten thong tin</span>
-      <p class="infor-detail">Noi dung thong tin</p>
+    <!-- login form -->
+    <div class="login-form">
+      <h2 class="login-form--title">Đăng nhập</h2>
+      <input type="text" id="userName" placeholder="Tên đăng nhập" />
+      <input type="text" id="passWord" placeholder="Mật khẩu" />
+      <button id="loginBtn">Đăng nhập</button>
+      <p class="caution hidden">cảnh báo đăng nhập</p>
     </div>
+    <!-- end of login form -->
+
+    <!-- search form -->
+    <div class="search hidden">
+      <div class="search-form">
+        <input type="text" id="searchSite" placeholder="Site CH" />
+        <input type="text" id="searchName" placeholder="Tên CH" />
+        <button id="searchBtn">Tìm kiếm</button>
+        <p class="caution hidden">cảnh báo đăng nhập</p>
+      </div>
+      <div class="search-result"></div>
+      <!-- <div class="search-result-item">
+        <div class="infor-group">
+          <div class="infor">
+            <span class="infor-title">site</span>
+            <p class="infor-detail">2011</p>
+          </div>
+          <div class="infor">
+            <span class="infor-title">tên CH</span>
+            <p class="infor-detail">HNI almaz</p>
+          </div>
+          <div class="infor">
+            <span class="infor-title">KSTT</span>
+            <p class="infor-detail">Nguyễn thị như A</p>
+          </div>
+          <i class="fas fa-angle-down"></i>
+        </div>
+        <div class="search-result--accordian">
+          <div class="infor-group">
+            <div class="infor">
+              <span class="infor-title">CHT</span>
+              <p class="infor-detail">làng văn nhàng</p>
+            </div>
+            <div class="infor">
+              <span class="infor-title">SDT</span>
+              <p class="infor-detail">0123456789</p>
+            </div>
+          </div>
+          <div class="infor-group">
+            <div class="infor">
+              <span class="infor-title">GDV</span>
+              <p class="infor-detail">Giám đốc vùng</p>
+            </div>
+            <div class="infor">
+              <span class="infor-title">GDM</span>
+              <p class="infor-detail">Giám đốc miền</p>
+            </div>
+          </div>
+          <div class="infor-group">
+            <div class="infor">
+              <span class="infor-title">Địa chỉ</span>
+              <p class="infor-detail">Số 2 tại đâu thì tại</p>
+            </div>
+            <div class="infor">
+              <a href="#">
+                <i class="fas fa-map-marker-alt"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div> -->
+    </div>
+    <!--end of search form -->
 
     <script src="./src/index.js"></script>
   </body>

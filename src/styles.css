@@ -1,8 +1,10 @@
 :root {
-  --color-text-main: #14471e;
-  --color-text-sub: #68904d;
-  --color-bg-sub: #ee9b01;
+  --color-text-main: hsl(132, 56%, 18%);
+  --color-text-sub: hsl(96, 30%, 43%);
+  --color-bg-sub2: hsl(29, 100%, 43%);
+  --color-bg-sub: hsla(39, 99%, 47%, 0.8);
   --color-bg-main: hsla(174, 10%, 80%);
+  --color-bg-main2: hsla(174, 10%, 80%, 0.5);
 }
 
 * {
@@ -13,26 +15,131 @@
 
 body {
   font-family: "Montserrat", sans-serif;
-  background: var(--color-bg-sub);
   color: var(--color-text-main);
+  background: var(--color-bg-sub);
   padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+/* style for global element */
+.hidden {
+  display: none !important;
+}
+
+.caution {
+  margin-top: 8px;
+  font-size: 13px;
+  color: rgb(170, 26, 26);
+}
+
+input {
+  background: var(--color-bg-main);
+
+  margin: 5px 0px;
+
+  font-weight: 500;
+  border-radius: 10px;
+}
+
+button,
+input {
+  display: block;
+  outline: none;
+  border: 1px;
+  border-color: none;
+  padding: 10px 20px;
+
+  font-family: "Montserrat", sans-serif;
+  color: var(--color-text-main);
+}
+
+button {
+  border-radius: 40px;
+  font-weight: 700;
+  background: var(--color-bg-sub);
+  cursor: pointer;
+  animation: ease-in-out 0.2s;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* end of style for global element */
+
+/* style for login form */
+.login-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  padding: 40px 50px;
+  text-align: center;
+  border-radius: 10px;
+  background: var(--color-bg-main2);
+  margin-top: 50px;
+}
+
+.login-form input {
+  margin-bottom: 15px;
+}
+
+.login-form--title {
+  margin-bottom: 40px;
+}
+/* end of style for login form */
+/* style for search */
+.search-form {
+  background-color: var(--color-bg-main2);
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+/* end style for search */
+/* style for search result */
+.search-result-item {
+  background-color: var(--color-bg-main2);
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+.search-result-item i {
+  padding: 5px;
+  margin-left: 5px;
+  font-size: 20px;
+  color: var(--color-bg-sub2);
+  cursor: pointer;
+}
+/* end of style for search result */
+
 /* style for infor box */
+.infor-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  border-radius: 5px;
+}
+
 .infor {
-  top: 20px;
+  display: block;
   position: relative;
 }
 
 .infor-title {
   position: absolute;
   top: -10px;
-  left: 20px;
+  left: 15px;
+  font-size: 14px;
 }
 
 .infor-detail {
-  padding: 15px 20px 10px;
-  display: inline-block;
+  padding: 10px 15px 5px;
+  display: block;
   background-color: var(--color-bg-main);
   border-radius: 5px;
   font-weight: 600;
