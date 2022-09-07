@@ -8,7 +8,7 @@ const showEle = (element) => {
 const hiddenEle = (element) => {
   element.classList.add("hidden");
 };
-
+const modalEle = document.querySelector(".modal");
 const handleLogin = () => {
   let userName = document.querySelector("#userName").value;
   let passWord = document.querySelector("#passWord").value;
@@ -18,8 +18,7 @@ const handleLogin = () => {
     showEle(cautionEle);
     return;
   }
-
-  loginBtn.disabled = true; // disabled button
+  showEle(modalEle);
 
   let submitData = {
     type: "login",
@@ -40,21 +39,21 @@ const handleLogin = () => {
       return response.json();
     })
     .then((data) => {
+      hiddenEle(modalEle);
       if (data.status) {
         showEle(document.querySelector(".search"));
         hiddenEle(document.querySelector(".login-form"));
         return;
       }
-      loginBtn.disabled = false;
       if (!data.status) {
         cautionEle.innerHTML = "thông tin đăng nhập sai";
-        showEle(cautionEle);
+        hiddenEle(modalEle);
       }
     })
     .catch((error) => {
       console.error("Error:", error);
       alert("Đăng nhập không thành công, hãy thử lại");
-      loginBtn.disabled = false;
+      hiddenEle(modalEle);
     });
 };
 
@@ -133,6 +132,18 @@ const renderSearchData = (data) => {
       </div>
     `;
   });
+  addArrowFunction();
+};
+
+const addArrowFunction = () => {
+  let searchItemEleList = document.querySelectorAll(".search-result-item");
+
+  searchItemEleList.forEach((item) => {
+    let arrowEle = item.querySelector(".fa-angle-down");
+    arrowEle.addEventListener("click", () => {
+      item.classList.toggle("active");
+    });
+  });
 };
 
 const handleSearch = () => {
@@ -142,7 +153,7 @@ const handleSearch = () => {
     return;
   }
 
-  searchBtn.disabled = true; //disable button when submit
+  showEle(modalEle);
 
   let submitData = {
     type: "search",
@@ -163,13 +174,13 @@ const handleSearch = () => {
       return response.json();
     })
     .then((data) => {
+      hiddenEle(modalEle);
       renderSearchData(data);
-      searchBtn.disabled = false;
     })
     .catch((error) => {
       console.error("Error:", error);
       alert("Có lỗi xảy ra, hãy thử lại");
-      searchBtn.disabled = false;
+      hiddenEle(modalEle);
     });
 };
 

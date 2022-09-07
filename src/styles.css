@@ -116,6 +116,22 @@ button:hover {
   color: var(--color-bg-sub2);
   cursor: pointer;
 }
+.active .search-result--accordian {
+  display: block;
+}
+i {
+  cursor: pointer;
+  animation: ease-in-out 0.4s;
+}
+i:hover {
+  transform: scale(1.2);
+}
+.active .fa-angle-down {
+  transform: rotate(180deg);
+}
+.search-result--accordian {
+  display: none;
+}
 /* end of style for search result */
 
 /* style for infor box */
@@ -153,3 +169,21 @@ button:hover {
   font-weight: 400;
 }
 /* end of style for infor box */
+
+/* modal */
+.modal {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  background: hsla(0, 0%, 62%, 0.5);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 40px;
+}
+/* end of modal */
