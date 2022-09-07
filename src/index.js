@@ -1,5 +1,5 @@
 const URL =
-  "https://script.google.com/macros/s/AKfycbyBTd54B-a6LAw5woI1DFKu-mbTNCAMqnwn4arJAJuPsuFsejtGzQfeQmbCQqbqciBq/exec";
+  "https://script.google.com/macros/s/AKfycbwXE1g3-NhwfRUO11Fj9N1zp5hoW0K4kS3UyU96U5AuIPuH1r-KFSMuIc_4Xwmuv_jK/exec";
 
 // login function
 const showEle = (element) => {
@@ -122,13 +122,11 @@ const renderSearchData = (data) => {
           </div>
           <div class="infor-group">
             <div class="infor">
-              <span class="infor-title">Địa chỉ</span>
-              <p class="infor-detail">${item.address}</p>
-            </div>
-            <div class="infor">
-              <a href="#">
-                <i class="fas fa-map-marker-alt"></i>
-              </a>
+            <span class="infor-title">Địa chỉ</span>
+            <p class="infor-detail">
+                <a href="https://maps.google.com/?q=${item.lat},${item.long}"><i class="fas fa-map-marker-alt"></i></a>
+                 ${item.address}
+            </p>
             </div>
           </div>
         </div>

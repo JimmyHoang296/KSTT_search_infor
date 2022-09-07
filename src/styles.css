@@ -50,8 +50,9 @@ input {
   outline: none;
   border: 1px;
   border-color: none;
-  padding: 10px 20px;
+  padding: 15px 25px;
 
+  font-size: 18px;
   font-family: "Montserrat", sans-serif;
   color: var(--color-text-main);
 }
@@ -111,7 +112,7 @@ button:hover {
 .search-result-item i {
   padding: 5px;
   margin-left: 5px;
-  font-size: 20px;
+  font-size: 25px;
   color: var(--color-bg-sub2);
   cursor: pointer;
 }
@@ -125,6 +126,12 @@ button:hover {
   border-radius: 5px;
 }
 
+@media screen and (max-width: 480px) {
+  .infor-group {
+    flex-direction: column;
+  }
+}
+
 .infor {
   display: block;
   position: relative;
@@ -135,6 +142,7 @@ button:hover {
   top: -10px;
   left: 15px;
   font-size: 14px;
+  font-weight: 500;
 }
 
 .infor-detail {
@@ -142,6 +150,6 @@ button:hover {
   display: block;
   background-color: var(--color-bg-main);
   border-radius: 5px;
-  font-weight: 600;
+  font-weight: 400;
 }
 /* end of style for infor box */
