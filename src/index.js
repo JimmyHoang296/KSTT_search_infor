@@ -96,7 +96,6 @@ const renderSearchData = (data) => {
             <span class="infor-title">KSTT</span>
             <p class="infor-detail">${item.KSTT}</p>
           </div>
-          <div class="infor-group">
           <div class="infor">
           <span class="infor-title">Địa chỉ</span>
           <p class="infor-detail">
@@ -104,6 +103,7 @@ const renderSearchData = (data) => {
                ${item.address}
           </p>
           </div>
+          
         </div>
           <i class="fas fa-angle-down"></i>
         </div>
