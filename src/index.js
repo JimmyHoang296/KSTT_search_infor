@@ -97,16 +97,15 @@ const renderSearchData = (data) => {
             <p class="infor-detail">${item.KSTT}</p>
           </div>
           <div class="infor">
-          <span class="infor-title">Địa chỉ</span>
-          <p class="infor-detail">
-              <a href="https://maps.google.com/?q=${item.lat},${item.long}"><i class="fas fa-map-marker-alt"></i></a>
-               ${item.address}
-          </p>
-          </div>
-          
+            <span class="infor-title">Địa chỉ</span>
+            <p class="infor-detail">
+                <a href="https://maps.google.com/?q=${item.lat},${item.long}"><i class="fas fa-map-marker-alt"></i></a>
+                ${item.address}
+            </p>
+          </div>  
         </div>
           <i class="fas fa-angle-down"></i>
-        </div>
+        
         <div class="search-result--accordian">
           <div class="infor-group">
             <div class="infor">
@@ -128,7 +127,6 @@ const renderSearchData = (data) => {
               <p class="infor-detail">${item.GDV}</p>
             </div>
           </div>
-
         </div>
       </div>
     `;
