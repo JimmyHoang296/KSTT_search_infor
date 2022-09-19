@@ -1,5 +1,5 @@
 const URL =
-  "https://script.google.com/macros/s/AKfycbwXE1g3-NhwfRUO11Fj9N1zp5hoW0K4kS3UyU96U5AuIPuH1r-KFSMuIc_4Xwmuv_jK/exec";
+  "https://script.google.com/macros/s/AKfycbxUFFZPEGtR-REdDwMH5Tqm5PLHm-5GuRUBdRItPY2QFXd0iKJhBtYmkqVOwxINUIxq/exec";
 
 // login function
 const showEle = (element) => {
@@ -72,6 +72,7 @@ passWordInput.addEventListener("input", () => {
 // search infor function
 let searchSiteInput = document.querySelector("#searchSite");
 let searchNameInput = document.querySelector("#searchName");
+let searchAddInput = document.querySelector("#searchAdd");
 let searchBtn = document.querySelector("#searchBtn");
 let cautionSearchEle = document.querySelector(".search-form .caution");
 
@@ -95,6 +96,15 @@ const renderSearchData = (data) => {
             <span class="infor-title">KSTT</span>
             <p class="infor-detail">${item.KSTT}</p>
           </div>
+          <div class="infor-group">
+          <div class="infor">
+          <span class="infor-title">Địa chỉ</span>
+          <p class="infor-detail">
+              <a href="https://maps.google.com/?q=${item.lat},${item.long}"><i class="fas fa-map-marker-alt"></i></a>
+               ${item.address}
+          </p>
+          </div>
+        </div>
           <i class="fas fa-angle-down"></i>
         </div>
         <div class="search-result--accordian">
@@ -118,15 +128,7 @@ const renderSearchData = (data) => {
               <p class="infor-detail">${item.GDV}</p>
             </div>
           </div>
-          <div class="infor-group">
-            <div class="infor">
-            <span class="infor-title">Địa chỉ</span>
-            <p class="infor-detail">
-                <a href="https://maps.google.com/?q=${item.lat},${item.long}"><i class="fas fa-map-marker-alt"></i></a>
-                 ${item.address}
-            </p>
-            </div>
-          </div>
+
         </div>
       </div>
     `;
@@ -146,7 +148,11 @@ const addArrowFunction = () => {
 };
 
 const handleSearch = () => {
-  if (searchNameInput.value === "" && searchSiteInput.value === "") {
+  if (
+    searchNameInput.value === "" &&
+    searchSiteInput.value === "" &&
+    searchAddInput.value === ""
+  ) {
     cautionSearchEle.innerHTML = "Nhập thông tin để tìm kiếm";
     showEle(cautionSearchEle);
     return;
@@ -158,7 +164,8 @@ const handleSearch = () => {
     type: "search",
     data: {
       site: searchSiteInput.value,
-      siteName: searchNameInput.value
+      siteName: searchNameInput.value,
+      siteAdd: searchAddInput.value
     }
   };
 
@@ -188,6 +195,10 @@ searchSiteInput.addEventListener("input", () => {
 });
 
 searchNameInput.addEventListener("input", () => {
+  hiddenEle(cautionSearchEle);
+});
+
+searchAddInput.addEventListener("input", () => {
   hiddenEle(cautionSearchEle);
 });
 
