@@ -41,7 +41,8 @@ const handleLogin = () => {
     .then((data) => {
       hiddenEle(modalEle);
       if (data.status) {
-        showEle(document.querySelector(".search"));
+        showEle(document.querySelector(".nav"))
+        showEle(document.querySelector("#searchStore"));
         hiddenEle(document.querySelector(".login-form"));
         return;
       }
@@ -68,6 +69,24 @@ userNameInput.addEventListener("input", () => {
 passWordInput.addEventListener("input", () => {
   hiddenEle(cautionEle);
 });
+// nav function
+let navEmp = document.querySelector("#navEmp")
+let navStore = document.querySelector("#navStore")
+
+navEmp.addEventListener('click',()=>{
+  hiddenEle(document.querySelector('#searchStore'))
+  showEle(document.querySelector('#searchEmp'))
+  navEmp.classList.add('nav-active')
+  navStore.classList.remove('nav-active')
+})
+
+navStore.addEventListener('click',()=>{
+  showEle(document.querySelector('#searchStore'))
+  hiddenEle(document.querySelector('#searchEmp'))
+  navStore.classList.add('nav-active')
+  navEmp.classList.remove('nav-active')
+})
+
 
 // search infor function
 let searchSiteInput = document.querySelector("#searchSite");
@@ -76,7 +95,7 @@ let searchAddInput = document.querySelector("#searchAdd");
 let searchBtn = document.querySelector("#searchBtn");
 let cautionSearchEle = document.querySelector(".search-form .caution");
 
-const renderSearchData = (data) => {
+const renderSearchStoreData = (data) => {
   const searchResultEle = document.querySelector(".search-result");
   data.result.forEach((item) => {
     searchResultEle.innerHTML =
@@ -179,7 +198,7 @@ const handleSearch = () => {
     })
     .then((data) => {
       hiddenEle(modalEle);
-      renderSearchData(data);
+      renderSearchStoreData(data);
     })
     .catch((error) => {
       console.error("Error:", error);
@@ -201,3 +220,69 @@ searchAddInput.addEventListener("input", () => {
 });
 
 searchBtn.addEventListener("click", handleSearch);
+
+// handleSearchEmployee function
+
+let searchDept = document.querySelector('#searchDept')
+let searchPart = document.querySelector('#searchPart')
+let searchPosition = document.querySelector('#searchPosition')
+let searchEmpName = document.querySelector('#searchEmpName')
+let searchEmpBtn = document.querySelector('#searchEmpBtn')
+
+const renderSearchEmpData = (data) => {
+  const searchResultEle = document.querySelector("#searchEmp .search-result");
+  data.result.forEach((item) => {
+    searchResultEle.innerHTML =
+      searchResultEle.innerHTML +
+      `
+    <div class="search-result-item">
+        <div class="infor-group">
+          <div class="infor">
+            <span class="infor-title">Site</span>
+            <p class="infor-detail">${item.site}</p>
+          </div>
+          <div class="infor">
+            <span class="infor-title">Tên CH</span>
+            <p class="infor-detail">${item.siteName}</p>
+          </div>
+          <div class="infor">
+            <span class="infor-title">KSTT</span>
+            <p class="infor-detail">${item.KSTT}</p>
+          </div>
+          <div class="infor">
+            <span class="infor-title">Địa chỉ</span>
+            <p class="infor-detail">
+                <a href="https://maps.google.com/?q=${item.lat},${item.long}"><i class="fas fa-map-marker-alt"></i></a>
+                ${item.address}
+            </p>
+          </div>  
+        </div>
+          <i class="fas fa-angle-down"></i>
+        
+        <div class="search-result--accordian">
+          <div class="infor-group">
+            <div class="infor">
+              <span class="infor-title">CHT</span>
+              <p class="infor-detail">${item.CHT}</p>
+            </div>
+            <div class="infor">
+              <span class="infor-title">SDT</span>
+              <p class="infor-detail">${item.CHTPhone}</p>
+            </div>
+          </div>
+          <div class="infor-group">
+            <div class="infor">
+              <span class="infor-title">QLKV</span>
+              <p class="infor-detail">${item.QLKV}</p>
+            </div>
+            <div class="infor">
+              <span class="infor-title">GDV</span>
+              <p class="infor-detail">${item.GDV}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+  });
+  addArrowFunction();
+};

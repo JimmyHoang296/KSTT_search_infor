@@ -70,7 +70,29 @@ button:hover {
 }
 
 /* end of style for global element */
+/* style for nav */
+.nav{
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.nav-item{
+  font-size: 18px;
+  opacity: 0.6;
+  cursor: pointer;
+}
 
+.nav-item{
+
+}
+
+.nav-active{
+  opacity: 1;
+  font-size: 20px;
+}
+
+/* end of style for nav */
 /* style for login form */
 .login-form {
   display: flex;
