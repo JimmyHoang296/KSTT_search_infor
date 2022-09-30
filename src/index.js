@@ -257,7 +257,7 @@ const renderSearchEmpData = (data) => {
           
           <i class="fas fa-angle-down"></i>
         </div>
-        <div class="asearch-result--accordian">
+        <div class="search-result--accordian">
           <div class="infor-group">
             <div class="infor">
                 <span class="infor-title">Mã NV</span>
