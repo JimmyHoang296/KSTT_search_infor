@@ -1,0 +1,214 @@
+:root {
+  --color-text-main: hsl(132, 56%, 18%);
+  --color-text-sub: hsl(96, 30%, 43%);
+  --color-bg-sub2: hsl(29, 100%, 43%);
+  --color-bg-sub: hsla(39, 99%, 47%, 0.8);
+  --color-bg-main: hsla(174, 10%, 80%);
+  --color-bg-main2: hsla(174, 10%, 80%, 0.5);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  color: var(--color-text-main);
+  background: var(--color-bg-sub);
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* style for global element */
+.hidden {
+  display: none !important;
+}
+
+.caution {
+  margin-top: 8px;
+  font-size: 13px;
+  color: rgb(170, 26, 26);
+}
+
+input {
+  background: var(--color-bg-main);
+
+  margin: 5px 0px;
+
+  font-weight: 500;
+  border-radius: 10px;
+}
+
+button,
+input {
+  display: block;
+  outline: none;
+  border: 1px;
+  border-color: none;
+  padding: 15px 25px;
+
+  font-size: 18px;
+  font-family: "Montserrat", sans-serif;
+  color: var(--color-text-main);
+}
+
+button {
+  border-radius: 40px;
+  font-weight: 700;
+  background: var(--color-bg-sub);
+  cursor: pointer;
+  animation: ease-in-out 0.2s;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* end of style for global element */
+/* style for nav */
+.nav{
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.nav-item{
+  font-size: 18px;
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.nav-item{
+
+}
+
+.nav-active{
+  opacity: 1;
+  font-size: 20px;
+}
+
+/* end of style for nav */
+/* style for login form */
+.login-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  padding: 40px 50px;
+  text-align: center;
+  border-radius: 10px;
+  background: var(--color-bg-main2);
+  margin-top: 50px;
+}
+
+.login-form input {
+  margin-bottom: 15px;
+}
+
+.login-form--title {
+  margin-bottom: 40px;
+}
+/* end of style for login form */
+/* style for search */
+.search-form {
+  background-color: var(--color-bg-main2);
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+/* end style for search */
+/* style for search result */
+.search-result-item {
+  background-color: var(--color-bg-main2);
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+.search-result-item i {
+  padding: 5px;
+  margin-left: 5px;
+  font-size: 25px;
+  color: var(--color-bg-sub2);
+  cursor: pointer;
+}
+.active .search-result--accordian {
+  display: block;
+}
+i {
+  cursor: pointer;
+  animation: ease-in-out 0.4s;
+}
+i:hover {
+  transform: scale(1.2);
+}
+.active .fa-angle-down {
+  transform: rotate(180deg);
+}
+.search-result--accordian {
+  display: none;
+}
+/* end of style for search result */
+
+/* style for infor box */
+.infor-group {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 480px) {
+  .infor-group {
+    flex-direction: column;
+  }
+}
+
+.infor {
+  display: block;
+  position: relative;
+}
+
+.infor-title {
+  position: absolute;
+  top: -10px;
+  left: 15px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.infor-detail {
+  padding: 10px 15px 5px;
+  display: block;
+  background-color: var(--color-bg-main);
+  border-radius: 5px;
+  font-weight: 400;
+}
+/* end of style for infor box */
+
+/* modal */
+.modal {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  background: hsla(0, 0%, 62%, 0.5);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 40px;
+}
+/* end of modal */
+
+
+/*# sourceMappingURL=/styles.dd855970.css.map */
